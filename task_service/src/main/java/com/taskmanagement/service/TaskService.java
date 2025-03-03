@@ -1,4 +1,4 @@
-package com.taskmanagement.sevice;
+package com.taskmanagement.service;
 
 import com.taskmanagement.enums.TaskStatus;
 import com.taskmanagement.model.Task;

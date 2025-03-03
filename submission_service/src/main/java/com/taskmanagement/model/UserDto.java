@@ -1,4 +1,4 @@
-package com.taskmanagement.dtos;
+package com.taskmanagement.model;
 
 public class UserDto {
 	private Long id;
