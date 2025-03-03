@@ -1,0 +1,21 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: EUREKA_SERVER
+
+eureka:
+  server:
+    enable-self-preservation: true # Recommended for production, defaults to true
+    eviction-interval-timer-in-ms: 60000 # Eviction task runs every 60 seconds (1 minute) - Adjust as needed
+    renewal-percent-threshold: 0.85 # Default value, generally good
+    response-cache-update-delay-ms: 30000 # Default value, generally good
+    wait-time-in-ms-when-sync-empty: 30000 # Default value, generally good
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
