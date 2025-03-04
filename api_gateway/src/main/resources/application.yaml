@@ -1,0 +1,46 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: GATEWAY-SERVICE
+  cloud:
+    gateway:
+      routes:
+        - id: USER-SERVICE
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/auth/**,/users/**,/api/v1/users/**,/
+        - id: TASK-SERVICE
+          uri: lb://TASK-SERVICE
+          predicates:
+            - Path=/api/v1/tasks/**,/tasks/**
+        - id: SUBMISSION-SERVICE
+          uri: lb://SUBMISSION-SERVICE
+          predicates:
+            - Path=/api/v1/submissions/**,/submissions/**
+    default-filters:
+      - DedupeResponseHeader=Access-Control-Allow-Credentials,Access-Control-Allow-Origin
+    globalcors:
+      cors-configurations:
+        '[/**]':
+          allowedOrigins: "*" #FE-domain
+          allowedMethods: "GET,POST,PUT,DELETE"
+          allowedHeaders: "*"
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-expiration-duration-in-seconds: 90
+    lease-renewal-interval-in-seconds: 30
+    health-check-url-path: /actuator/health
+    status-page-url-path: /actuator/info
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8090/eureka/
+
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
