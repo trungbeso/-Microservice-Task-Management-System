@@ -17,6 +17,7 @@
         <option value="$PROJECT_DIR$/user_service/pom.xml" />
         <option value="$PROJECT_DIR$/submission_service/pom.xml" />
         <option value="$PROJECT_DIR$/eureka-cloud/pom.xml" />
+        <option value="$PROJECT_DIR$/api_gateway/pom.xml" />
       </list>
     </option>
   </component>
