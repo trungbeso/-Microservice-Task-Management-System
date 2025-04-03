@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/-Microservice-Task-management.iml" filepath="$PROJECT_DIR$/.idea/-Microservice-Task-management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taskify-client.iml" filepath="$PROJECT_DIR$/taskify-client.iml" />
     </modules>
   </component>
 </project>

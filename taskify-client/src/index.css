@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica', sans-serif, Arial, "Roboto Light";
+    background: #d8dade;
+    overflow-x: hidden !important;
+    width: 100vw !important;
+
+}
+
